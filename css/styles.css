@@ -177,8 +177,11 @@ em { font-style: italic; }
 }
 
 .nav__logo-img {
-  height: 34px;
+  max-height: 40px;
   width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav__links {
