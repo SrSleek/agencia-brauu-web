@@ -177,11 +177,14 @@ em { font-style: italic; }
 }
 
 .nav__logo-img {
-  max-height: 40px;
+  max-height: 52px;
   width: auto;
-  max-width: 160px;
+  max-width: 180px;
   object-fit: contain;
   display: block;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .nav__links {
