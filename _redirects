@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# Trailing slash normalization
+/blog   /blog/  301
