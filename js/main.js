@@ -1,25 +1,74 @@
 /* ===========================
-   Navigation
+   Navigation — scroll + mobile toggle
    =========================== */
-const nav    = document.querySelector('.nav');
-const toggle = document.querySelector('.nav__toggle');
-const links  = document.querySelector('.nav__links');
+const nav    = document.getElementById('nav');
+const toggle = document.getElementById('nav-toggle');
+const links  = document.getElementById('nav-links');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+  nav?.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
 toggle?.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  links.classList.toggle('open');
-  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+  const isOpen = links.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', String(isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 links?.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
-    toggle.classList.remove('open');
     links.classList.remove('open');
+    toggle?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+  });
+});
+
+/* ===========================
+   Scroll-reveal animations
+   =========================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+// Hero elements fire immediately; everything else triggers on scroll
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      if (el.closest('.hero')) {
+        el.classList.add('visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+  });
+});
+
+/* ===========================
+   Services accordion
+   =========================== */
+document.querySelectorAll('.service-item__trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item   = trigger.closest('.service-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close any open item
+    document.querySelectorAll('.service-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.service-item__trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle clicked item
+    if (!isOpen) {
+      item.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
@@ -31,16 +80,15 @@ async function loadBlogPreview() {
   if (!grid) return;
 
   try {
-    const res  = await fetch('/blog/posts.json');
-    const data = await res.json();
+    const res   = await fetch('/blog/posts.json');
+    const data  = await res.json();
     const posts = data.slice(0, 3);
 
     if (!posts.length) {
       grid.innerHTML = '<p class="blog-empty">Próximamente publicaremos contenido.</p>';
       return;
     }
-
-    grid.innerHTML = posts.map(post => postCardHTML(post)).join('');
+    grid.innerHTML = posts.map(postCardHTML).join('');
   } catch {
     grid.innerHTML = '<p class="blog-empty">No se pudo cargar el blog.</p>';
   }
@@ -61,8 +109,7 @@ async function loadBlogListing() {
       grid.innerHTML = '<p class="blog-empty">Próximamente publicaremos contenido.</p>';
       return;
     }
-
-    grid.innerHTML = posts.map(post => postCardHTML(post)).join('');
+    grid.innerHTML = posts.map(postCardHTML).join('');
   } catch {
     grid.innerHTML = '<p class="blog-empty">No se pudo cargar el blog.</p>';
   }
@@ -70,12 +117,12 @@ async function loadBlogListing() {
 
 function postCardHTML(post) {
   const date = new Date(post.date).toLocaleDateString('es-MX', {
-    year: 'numeric', month: 'long', day: 'numeric'
+    year: 'numeric', month: 'long', day: 'numeric',
   });
   return `
     <article class="post-card">
       <div class="post-card__body">
-        <p class="post-card__category">${post.category}</p>
+        <span class="post-card__category">${post.category}</span>
         <h3><a href="/blog/${post.slug}/">${post.title}</a></h3>
         <p>${post.excerpt}</p>
         <span class="post-card__date">${date}</span>
@@ -90,7 +137,7 @@ const form = document.getElementById('contact-form');
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = form.querySelector('[type="submit"]');
-  btn.disabled = true;
+  btn.disabled    = true;
   btn.textContent = 'Enviando...';
 
   const body = Object.fromEntries(new FormData(form));
@@ -98,15 +145,15 @@ form?.addEventListener('submit', async (e) => {
   try {
     // TODO: configure n8n webhook URL before launch
     await fetch('', {
-      method: 'POST',
+      method:  'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      body:    JSON.stringify(body),
     });
     btn.textContent = '¡Mensaje enviado!';
     form.reset();
   } catch {
     btn.textContent = 'Error, intenta de nuevo';
-    btn.disabled = false;
+    btn.disabled    = false;
   }
 });
 

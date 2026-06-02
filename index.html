@@ -4,32 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brauu Agency — Automatización, IA y Desarrollo Web</title>
-  <meta name="description" content="Agencia especializada en automatización de procesos, bots con IA, desarrollo web, SEO, redes sociales y sistemas POS." />
-  <meta property="og:title" content="Brauu Agency" />
-  <meta property="og:description" content="Transformamos tu negocio con automatización, inteligencia artificial y tecnología." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://agenciabrauu.com" />
+  <meta name="description" content="Agencia especializada en automatización de procesos, bots con IA, desarrollo web, SEO, redes sociales y sistemas POS. Transformamos operaciones en ventajas competitivas." />
+  <meta property="og:title"       content="Brauu Agency" />
+  <meta property="og:description" content="Transformamos operaciones en ventajas competitivas." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://agenciabrauu.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="icon" href="/assets/images/favicon.ico" />
 </head>
 <body>
 
-  <!-- ======= NAVIGATION ======= -->
+  <!-- ===================== NAVIGATION ===================== -->
   <header>
-    <nav class="nav">
+    <nav class="nav" id="nav">
       <div class="container nav__inner">
-        <a href="/" class="nav__logo">Brauu<span>.</span></a>
-        <ul class="nav__links">
+        <a href="/" class="nav__logo" aria-label="Brauu Agency — Inicio">
+          <img src="/assets/images/logo.png" alt="Brauu Agency" class="nav__logo-img" />
+        </a>
+        <ul class="nav__links" id="nav-links" role="list">
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="#contacto">Contacto</a></li>
-          <li><a href="#contacto" class="btn btn--primary nav__cta">Trabajemos juntos</a></li>
+          <li><a href="#contacto" class="btn btn--primary nav__cta">Hablemos</a></li>
         </ul>
-        <button class="nav__toggle" aria-label="Abrir menú">
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -38,140 +40,249 @@
 
   <main>
 
-    <!-- ======= HERO ======= -->
-    <section class="hero">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-heading">
       <div class="container hero__inner">
-        <div class="hero__badge">🚀 Automatización &amp; IA para tu negocio</div>
-        <h1>Tecnología que <em>trabaja</em> mientras tú creces</h1>
-        <p class="hero__sub">
-          En Brauu Agency combinamos automatización, inteligencia artificial y desarrollo web
-          para que tu empresa opere más rápido, con menos fricción y más resultados.
-        </p>
-        <div class="hero__actions">
-          <a href="#servicios" class="btn btn--primary">Ver servicios</a>
-          <a href="#contacto" class="btn btn--outline">Hablar con un experto</a>
+
+        <div class="hero__eyebrow" data-animate>
+          <span class="hero__dot" aria-hidden="true"></span>
+          <span>Brauu Agency — Tecnología para negocios</span>
         </div>
+
+        <h1 id="hero-heading" class="hero__headline" data-animate data-delay="1">
+          Transformamos<br>
+          operaciones en<br>
+          <em>ventajas competitivas</em>.
+        </h1>
+
+        <p class="hero__sub" data-animate data-delay="2">
+          Automatización, inteligencia artificial y desarrollo web de alto impacto
+          para empresas que no se conforman con el status quo.
+        </p>
+
+        <div class="hero__actions" data-animate data-delay="3">
+          <a href="#servicios" class="btn btn--primary">Explorar servicios</a>
+          <a href="#contacto" class="btn btn--ghost">Hablar con un experto →</a>
+        </div>
+
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
       </div>
     </section>
 
-    <!-- ======= SERVICES ======= -->
-    <section class="section" id="servicios">
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Automatización</span><span class="sep">·</span>
+        <span>Bots con IA</span><span class="sep">·</span>
+        <span>Desarrollo Web</span><span class="sep">·</span>
+        <span>SEO</span><span class="sep">·</span>
+        <span>Redes Sociales</span><span class="sep">·</span>
+        <span>Sistemas POS</span><span class="sep">·</span>
+        <span>Infraestructura</span><span class="sep">·</span>
+        <span>Automatización</span><span class="sep">·</span>
+        <span>Bots con IA</span><span class="sep">·</span>
+        <span>Desarrollo Web</span><span class="sep">·</span>
+        <span>SEO</span><span class="sep">·</span>
+        <span>Redes Sociales</span><span class="sep">·</span>
+        <span>Sistemas POS</span><span class="sep">·</span>
+        <span>Infraestructura</span><span class="sep">·</span>
+      </div>
+    </div>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section services section--alt" id="servicios" aria-labelledby="services-heading">
       <div class="container">
-        <div class="services__header">
-          <span class="section-label">Lo que hacemos</span>
-          <h2 class="section-title">Soluciones diseñadas para escalar</h2>
-          <p class="section-subtitle">
-            Desde la automatización de flujos hasta infraestructura de servidores,
-            cubrimos el stack completo de tu operación digital.
+
+        <div class="services__intro" data-animate>
+          <div>
+            <span class="label">Servicios</span>
+            <h2 id="services-heading">Todo lo que tu empresa<br>necesita para escalar</h2>
+          </div>
+          <p>Desde la automatización de flujos hasta la infraestructura que los soporta — cubrimos el stack completo de tu operación digital.</p>
+        </div>
+
+        <ul class="services__list" role="list">
+
+          <li class="service-item" data-animate data-delay="1">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">01</span>
+              <span class="service-item__name">Automatización de procesos</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Eliminamos tareas repetitivas integrando tus herramientas y sistemas con flujos inteligentes que operan sin intervención humana, reduciendo costos y errores.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="2">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">02</span>
+              <span class="service-item__name">Bots con IA</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Chatbots y agentes de inteligencia artificial que atienden clientes, califican leads y resuelven solicitudes las 24 horas del día, los 7 días de la semana.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="3">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">03</span>
+              <span class="service-item__name">Desarrollo web</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Sitios y aplicaciones web rápidos, seguros y optimizados para conversión, posicionamiento orgánico y una experiencia de usuario que convierte visitantes en clientes.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="4">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">04</span>
+              <span class="service-item__name">SEO</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Estrategia orgánica basada en datos para que tu negocio aparezca primero cuando tus clientes buscan exactamente lo que ofreces.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="1">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">05</span>
+              <span class="service-item__name">Gestión de redes sociales</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Contenido estratégico y gestión de comunidad que construye presencia de marca real, genera engagement genuino y convierte seguidores en clientes.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="2">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">06</span>
+              <span class="service-item__name">Automatización de contenido</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Pipelines de contenido que producen, adaptan y distribuyen automáticamente a múltiples canales — sin esfuerzo manual, con consistencia de marca.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="3">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">07</span>
+              <span class="service-item__name">Sistemas POS</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Implementación y soporte de puntos de venta integrados con tu inventario, contabilidad y reportes en tiempo real para decisiones más rápidas.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="service-item" data-animate data-delay="4">
+            <button class="service-item__trigger" aria-expanded="false">
+              <span class="service-item__num" aria-hidden="true">08</span>
+              <span class="service-item__name">Infraestructura de servidores</span>
+              <span class="service-item__arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="service-item__body" role="region">
+              <div class="service-item__body-inner">
+                <p>Configuración, monitoreo y mantenimiento de servidores en la nube o dedicados, optimizados para rendimiento, disponibilidad y seguridad.</p>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== DIFFERENTIATOR ===================== -->
+    <section class="section differentiator" id="nosotros" aria-labelledby="diff-heading">
+      <div class="container differentiator__inner">
+
+        <div data-animate>
+          <span class="label" style="color:rgba(91,155,213,0.55)">Por qué Brauu</span>
+          <p id="diff-heading" class="differentiator__statement">
+            No vendemos proyectos.<br>
+            Construimos sistemas que<br>
+            <em>trabajan por tu empresa</em>.
           </p>
         </div>
-        <div class="services__grid">
 
-          <div class="service-card">
-            <div class="service-card__icon">⚙️</div>
-            <h3>Automatización de procesos</h3>
-            <p>Eliminamos tareas repetitivas integrando tus herramientas y sistemas con flujos inteligentes.</p>
+        <div class="differentiator__points">
+          <div class="diff-point" data-animate data-delay="1">
+            <h4>Enfoque en resultados</h4>
+            <p>Cada solución se mide por el impacto en tu operación, no por horas de trabajo entregadas.</p>
           </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">🤖</div>
-            <h3>Bots con IA</h3>
-            <p>Chatbots y agentes de IA que atienden clientes, califican leads y resuelven solicitudes 24/7.</p>
+          <div class="diff-point" data-animate data-delay="2">
+            <h4>Stack completo</h4>
+            <p>Desde el diseño del flujo hasta la infraestructura que lo ejecuta — un solo equipo, cero fricciones.</p>
           </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">💻</div>
-            <h3>Desarrollo web</h3>
-            <p>Sitios y aplicaciones web rápidos, seguros y optimizados para conversión y SEO.</p>
+          <div class="diff-point" data-animate data-delay="3">
+            <h4>Tecnología que escala</h4>
+            <p>Diseñamos para el día de hoy y para el crecimiento de mañana, sin deuda técnica acumulada.</p>
           </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">🔍</div>
-            <h3>SEO</h3>
-            <p>Estrategia orgánica para que tu negocio aparezca primero cuando tus clientes buscan.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">📱</div>
-            <h3>Gestión de redes sociales</h3>
-            <p>Contenido estratégico y gestión de comunidad que construye presencia de marca real.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">✍️</div>
-            <h3>Automatización de contenido</h3>
-            <p>Pipelines de contenido que producen y distribuyen automáticamente a múltiples canales.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">🛒</div>
-            <h3>Sistemas POS</h3>
-            <p>Implementación y soporte de puntos de venta integrados con tu inventario y contabilidad.</p>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card__icon">🖥️</div>
-            <h3>Infraestructura de servidores</h3>
-            <p>Configuración, monitoreo y mantenimiento de servidores en la nube o dedicados.</p>
-          </div>
-
         </div>
+
       </div>
     </section>
 
-    <!-- ======= ABOUT CTA ======= -->
-    <section class="cta-strip" id="nosotros">
+    <!-- ===================== BLOG PREVIEW ===================== -->
+    <section class="section blog-preview" id="blog">
       <div class="container">
-        <span class="section-label" style="color:rgba(255,255,255,0.5)">Por qué Brauu</span>
-        <h2>Somos el equipo técnico que tu negocio necesita</h2>
-        <p>
-          No vendemos proyectos, construimos sistemas. Cada solución que entregamos
-          está diseñada para crecer contigo y reducir la dependencia operativa del día a día.
-        </p>
-        <a href="#contacto" class="btn btn--primary">Solicitar consulta gratuita</a>
-      </div>
-    </section>
-
-    <!-- ======= BLOG PREVIEW ======= -->
-    <section class="section section--alt" id="blog">
-      <div class="container">
-        <div class="blog-preview__header">
+        <div class="blog-preview__top" data-animate>
           <div>
-            <span class="section-label">Blog</span>
-            <h2 class="section-title">Recursos y tendencias</h2>
+            <span class="label">Blog</span>
+            <h2>Recursos y tendencias</h2>
           </div>
-          <a href="/blog/" class="btn btn--primary">Ver todos los artículos</a>
+          <a href="/blog/" class="btn btn--outline">Ver todos los artículos</a>
         </div>
-        <div class="blog-preview__grid" id="blog-preview-grid">
-          <!-- Posts cargados dinámicamente desde /blog/posts.json -->
+        <div class="blog-preview__grid" id="blog-preview-grid" aria-live="polite">
           <p class="blog-empty">Próximamente publicaremos contenido.</p>
         </div>
       </div>
     </section>
 
-    <!-- ======= CONTACT ======= -->
-    <section class="section" id="contacto">
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact section--alt" id="contacto" aria-labelledby="contact-heading">
       <div class="container">
         <div class="contact__grid">
-          <div class="contact__info">
-            <span class="section-label">Contacto</span>
-            <h2>Cuéntanos qué necesitas</h2>
-            <p>
-              Respondemos en menos de 24 horas. Si tienes un proyecto en mente,
-              una operación que quieres automatizar, o simplemente quieres saber
-              más sobre lo que hacemos, escríbenos.
-            </p>
-            <div class="contact__detail">
-              <span>✉️</span>
-              <a href="mailto:proyectos@agenciabrauu.com">proyectos@agenciabrauu.com</a>
-            </div>
-            <div class="contact__detail">
-              <span>🌐</span>
-              <span>agenciabrauu.com</span>
+
+          <div class="contact__info" data-animate>
+            <span class="label">Contacto</span>
+            <h2 id="contact-heading">Cuéntanos qué necesitas</h2>
+            <p>Respondemos en menos de 24 horas. Si tienes un proyecto en mente, una operación que quieres automatizar, o simplemente quieres saber más sobre lo que hacemos, escríbenos.</p>
+            <div class="contact__details">
+              <div class="contact__detail">
+                <div class="contact__detail-icon" aria-hidden="true">✉️</div>
+                <a href="mailto:proyectos@agenciabrauu.com">proyectos@agenciabrauu.com</a>
+              </div>
+              <div class="contact__detail">
+                <div class="contact__detail-icon" aria-hidden="true">🌐</div>
+                <span>agenciabrauu.com</span>
+              </div>
             </div>
           </div>
 
-          <div class="contact__form">
+          <div class="contact__form" data-animate data-delay="2">
             <form id="contact-form" novalidate>
               <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -204,23 +315,24 @@
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ======= FOOTER ======= -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
+      <div class="footer__top">
         <div class="footer__brand">
-          <div class="footer__logo">Brauu<span>.</span></div>
-          <p>Automatización, IA y tecnología para negocios que quieren crecer sin límites operativos.</p>
+          <img src="/assets/images/logo.png" alt="Brauu Agency" class="footer__brand-logo" />
+          <p>Automatización, IA y tecnología para negocios que crecen sin límites operativos.</p>
         </div>
         <div class="footer__col">
           <h4>Servicios</h4>
-          <ul>
+          <ul role="list">
             <li><a href="#servicios">Automatización</a></li>
             <li><a href="#servicios">Bots con IA</a></li>
             <li><a href="#servicios">Desarrollo web</a></li>
@@ -230,7 +342,7 @@
         </div>
         <div class="footer__col">
           <h4>Empresa</h4>
-          <ul>
+          <ul role="list">
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="#contacto">Contacto</a></li>
