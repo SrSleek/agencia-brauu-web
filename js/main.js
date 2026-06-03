@@ -143,8 +143,7 @@ form?.addEventListener('submit', async (e) => {
   const body = Object.fromEntries(new FormData(form));
 
   try {
-    // TODO: configure n8n webhook URL before launch
-    await fetch('', {
+    await fetch('https://n8n.agenciabrauu.com/webhook/contacto-brauu', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify(body),
