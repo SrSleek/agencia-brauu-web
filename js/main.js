@@ -146,10 +146,10 @@ form?.addEventListener('submit', async (e) => {
 
   try {
     await fetch('https://n8n.agenciabrauu.com/webhook/contacto-brauu', {
-      method:  'POST',
-      mode:    'no-cors',
+      method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(body),
+      body: JSON.stringify(body),
     });
     btn.textContent = '¡Mensaje enviado!';
     form.reset();
