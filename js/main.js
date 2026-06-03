@@ -76,19 +76,36 @@ document.querySelectorAll('.service-item__trigger').forEach(trigger => {
    Blog preview on homepage
    =========================== */
 async function loadBlogPreview() {
-  const grid = document.getElementById('blog-preview-grid');
+  const grid    = document.getElementById('blog-preview-grid');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
   if (!grid) return;
 
   try {
-    const res   = await fetch('/blog/posts.json');
-    const data  = await res.json();
-    const posts = data.slice(0, 3);
+    const res  = await fetch('/blog/posts.json');
+    const data = await res.json();
+    const posts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     if (!posts.length) {
       grid.innerHTML = '<p class="blog-empty">Próximamente publicaremos contenido.</p>';
+      if (prevBtn) prevBtn.hidden = true;
+      if (nextBtn) nextBtn.hidden = true;
       return;
     }
-    grid.innerHTML = posts.map(postCardHTML).join('');
+
+    const PAGE = 4;
+    let offset = 0;
+
+    function render() {
+      grid.innerHTML = posts.slice(offset, offset + PAGE).map(postCardHTML).join('');
+      if (prevBtn) prevBtn.disabled = offset === 0;
+      if (nextBtn) nextBtn.disabled = offset + PAGE >= posts.length;
+    }
+
+    prevBtn?.addEventListener('click', () => { offset = Math.max(0, offset - 1); render(); });
+    nextBtn?.addEventListener('click', () => { offset = Math.min(posts.length - PAGE, offset + 1); render(); });
+
+    render();
   } catch {
     grid.innerHTML = '<p class="blog-empty">No se pudo cargar el blog.</p>';
   }
