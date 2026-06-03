@@ -44,25 +44,80 @@
     <section class="hero" id="inicio" aria-labelledby="hero-heading">
       <div class="container hero__inner">
 
-        <div class="hero__eyebrow" data-animate>
-          <span class="hero__dot" aria-hidden="true"></span>
-          <span>Brauu Agency — Tecnología para negocios</span>
+        <div class="hero__text">
+          <div class="hero__eyebrow" data-animate>
+            <span class="hero__dot" aria-hidden="true"></span>
+            <span>Brauu Agency — Tecnología para negocios</span>
+          </div>
+
+          <h1 id="hero-heading" class="hero__headline" data-animate data-delay="1">
+            Transformamos<br>
+            operaciones en<br>
+            <em>ventajas competitivas</em>.
+          </h1>
+
+          <p class="hero__sub" data-animate data-delay="2">
+            Automatización, inteligencia artificial y desarrollo web de alto impacto
+            para empresas que no se conforman con el status quo.
+          </p>
+
+          <div class="hero__actions" data-animate data-delay="3">
+            <a href="#servicios" class="btn btn--primary">Explorar servicios</a>
+            <a href="#contacto" class="btn btn--ghost">Hablar con un experto →</a>
+          </div>
         </div>
 
-        <h1 id="hero-heading" class="hero__headline" data-animate data-delay="1">
-          Transformamos<br>
-          operaciones en<br>
-          <em>ventajas competitivas</em>.
-        </h1>
-
-        <p class="hero__sub" data-animate data-delay="2">
-          Automatización, inteligencia artificial y desarrollo web de alto impacto
-          para empresas que no se conforman con el status quo.
-        </p>
-
-        <div class="hero__actions" data-animate data-delay="3">
-          <a href="#servicios" class="btn btn--primary">Explorar servicios</a>
-          <a href="#contacto" class="btn btn--ghost">Hablar con un experto →</a>
+        <div class="hero__visual">
+          <svg width="100%" viewBox="0 0 680 400" role="img" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              @keyframes flow { 0%{stroke-dashoffset:80} 100%{stroke-dashoffset:0} }
+              @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.15);opacity:0.7} }
+              .pipe  { stroke-dasharray:7 4; animation: flow 1.4s linear infinite; }
+              .pipe2 { stroke-dasharray:7 4; animation: flow 1.9s linear infinite 0.3s; }
+              .pipe3 { stroke-dasharray:7 4; animation: flow 1.6s linear infinite 0.6s; }
+              .pipe4 { stroke-dasharray:7 4; animation: flow 2.0s linear infinite 0.9s; }
+              .pdot  { animation: pulse 2.2s ease-in-out infinite; transform-origin: center; }
+            </style>
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <rect x="20" y="150" width="118" height="80" rx="12" fill="#0d2240" stroke="#5b9bd5" stroke-width="1.5"/>
+            <text x="79" y="175" text-anchor="middle" font-size="22" fill="#ffffff" font-family="sans-serif">📱</text>
+            <text x="79" y="196" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff" font-family="sans-serif">Tú, desde</text>
+            <text x="79" y="212" text-anchor="middle" font-size="11" fill="#7eaad4" font-family="sans-serif">donde estés</text>
+            <circle class="pdot" cx="138" cy="190" r="5" fill="#5b9bd5"/>
+            <text x="79" y="248" text-anchor="middle" font-size="10" fill="#4a7bb5" font-family="sans-serif">"Vendí 3 piezas"</text>
+            <text x="79" y="261" text-anchor="middle" font-size="10" fill="#4a7bb5" font-family="sans-serif">foto, voz o texto</text>
+            <line class="pipe" x1="143" y1="190" x2="195" y2="190" stroke="#5b9bd5" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+            <rect x="197" y="130" width="130" height="120" rx="14" fill="#0a1e3d" stroke="#5b9bd5" stroke-width="2.5"/>
+            <text x="262" y="175" text-anchor="middle" font-size="28" fill="#ffffff" font-family="sans-serif">🐂</text>
+            <text x="262" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff" font-family="sans-serif">Agencia BRAUU</text>
+            <text x="262" y="216" text-anchor="middle" font-size="10" fill="#7eaad4" font-family="sans-serif">entiende y distribuye</text>
+            <text x="262" y="234" text-anchor="middle" font-size="9" fill="#4a7bb5" font-family="sans-serif">IA + Automatización</text>
+            <path class="pipe2" d="M327 152 Q370 152 400 105" stroke="#5b9bd5" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+            <line class="pipe" x1="327" y1="190" x2="400" y2="190" stroke="#5b9bd5" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+            <path class="pipe3" d="M327 228 Q370 228 400 275" stroke="#5b9bd5" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+            <rect x="400" y="76" width="126" height="58" rx="10" fill="#122d55" stroke="#4a7bb5" stroke-width="1"/>
+            <text x="463" y="100" text-anchor="middle" font-size="16" fill="#ffffff" font-family="sans-serif">🛒</text>
+            <text x="463" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff" font-family="sans-serif">Inventario listo</text>
+            <text x="463" y="128" text-anchor="middle" font-size="9" fill="#7eaad4" font-family="sans-serif">Shopify actualizado</text>
+            <rect x="400" y="161" width="126" height="58" rx="10" fill="#122d55" stroke="#4a7bb5" stroke-width="1"/>
+            <text x="463" y="185" text-anchor="middle" font-size="16" fill="#ffffff" font-family="sans-serif">💬</text>
+            <text x="463" y="203" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff" font-family="sans-serif">Confirmación</text>
+            <text x="463" y="213" text-anchor="middle" font-size="9" fill="#7eaad4" font-family="sans-serif">WhatsApp al instante</text>
+            <rect x="400" y="246" width="126" height="58" rx="10" fill="#122d55" stroke="#4a7bb5" stroke-width="1"/>
+            <text x="463" y="270" text-anchor="middle" font-size="16" fill="#ffffff" font-family="sans-serif">📊</text>
+            <text x="463" y="288" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff" font-family="sans-serif">Finanzas al día</text>
+            <text x="463" y="298" text-anchor="middle" font-size="9" fill="#7eaad4" font-family="sans-serif">Google Sheets</text>
+            <path class="pipe4" d="M526 105 Q570 105 590 160" stroke="#4a7bb5" stroke-width="1.2" fill="none" marker-end="url(#ar)"/>
+            <path class="pipe2" d="M526 190 L590 190" stroke="#4a7bb5" stroke-width="1.2" fill="none" marker-end="url(#ar)"/>
+            <path class="pipe3" d="M526 275 Q570 275 590 220" stroke="#4a7bb5" stroke-width="1.2" fill="none" marker-end="url(#ar)"/>
+            <rect x="588" y="148" width="76" height="84" rx="10" fill="#0f3d2e" stroke="#1D9E75" stroke-width="2"/>
+            <text x="626" y="175" text-anchor="middle" font-size="18" fill="#ffffff" font-family="sans-serif">📈</text>
+            <text x="626" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff" font-family="sans-serif">Reporte</text>
+            <text x="626" y="211" text-anchor="middle" font-size="9" fill="#9FE1CB" font-family="sans-serif">diario / semanal</text>
+            <text x="626" y="224" text-anchor="middle" font-size="9" fill="#9FE1CB" font-family="sans-serif">mensual</text>
+            <text x="340" y="355" text-anchor="middle" font-size="12" font-weight="600" fill="#5b9bd5" font-family="sans-serif" letter-spacing="1.5">TÚ VENDES · BRAUU SE ENCARGA DEL RESTO</text>
+            <text x="340" y="375" text-anchor="middle" font-size="10" fill="#4a7bb5" font-family="sans-serif">Automatización activa 24 horas, 7 días a la semana</text>
+          </svg>
         </div>
 
       </div>
