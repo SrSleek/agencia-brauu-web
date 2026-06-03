@@ -134,7 +134,9 @@ function postCardHTML(post) {
    Contact form
    =========================== */
 const form = document.getElementById('contact-form');
+console.log('form found:', form);
 form?.addEventListener('submit', async (e) => {
+  console.log('form submitted');
   e.preventDefault();
   const btn = form.querySelector('[type="submit"]');
   btn.disabled    = true;
